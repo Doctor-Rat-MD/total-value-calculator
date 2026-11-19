@@ -20,7 +20,7 @@ groceries_list = {
     "toilet paper":8,
     "laundry detergent": 10,
     }
-
+# this dictionary might be useless if we can't use a zip
 choices = 9
 picked = 1
 
@@ -41,6 +41,6 @@ while picked < choices:
 print(values)
 
 print(groceries_list.values())
-
+# i gotta find a workaround for this big math statement
 maths = str((milk * values[0])+(shoes * values[1])+(cheese * values[2])+(apples * values[3])+(garbage_bags * values[4])+(cereal * values[5])+(carrots * values[6])+(toilet_paper*values[7])+(laundry_detergent*values[8]))
-print(maths)
+print("Your total price before tax is $" + maths + ".")
