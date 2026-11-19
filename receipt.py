@@ -8,6 +8,7 @@ cereal = 3
 carrots = 7
 toilet_paper = 8
 laundry_detergent = 10
+
 groceries_list = {
     "milk": 2,
     "shoes": 3,
@@ -20,7 +21,7 @@ groceries_list = {
     "toilet paper":8,
     "laundry detergent": 10,
     }
-# this dictionary might be useless if we can't use a zip
+# this dictionary might be useless if we aren't allowed to use zip
 choices = 9
 picked = 1
 
@@ -38,9 +39,21 @@ while picked < choices:
     counter += 1
     values.append(purchase)
 
-print(values)
+# we gotta find another workaround instead of this giant ass maths statement
+maths = ((milk * values[0])+(shoes * values[1])+(cheese * values[2])+(apples * values[3])+(garbage_bags * values[4])+(cereal * values[5])+(carrots * values[6])+(toilet_paper*values[7])+(laundry_detergent*values[8]))
+print("Your total price before tax is $" + str(maths) + ".")
+miscprice = ((shoes * values[1])+(garbage_bags * values[4])+(toilet_paper*values[7])+(laundry_detergent*values[8]))
 
-print(groceries_list.values())
-# i gotta find a workaround for this big math statement
-maths = str((milk * values[0])+(shoes * values[1])+(cheese * values[2])+(apples * values[3])+(garbage_bags * values[4])+(cereal * values[5])+(carrots * values[6])+(toilet_paper*values[7])+(laundry_detergent*values[8]))
-print("Your total price before tax is $" + maths + ".")
+foodprice = ((milk * values[0])+ (cheese * values[2])+ (apples * values[3])+(cereal * values[5])+ (carrots * values[6]))
+print("Total food price: $"+ str(foodprice))
+print("Total misc price: $" + str(miscprice))
+ftax = .03
+mtax = .05
+
+ftaxed = (foodprice * ftax)
+mtaxed = (miscprice * mtax)
+print("Food tax total : $" + str(ftaxed))
+print("Misc tax total : $" + str(mtaxed))
+
+grand_total  = ftaxed + mtaxed + maths
+print("Grand total: $" + str(grand_total))
